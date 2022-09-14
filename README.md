@@ -1,4 +1,14 @@
 <h2>
+    <p>ใน backend->common->config->main-local</p>
+    <p>ใช้ connection mongodb ตามนี้</p>
+    'mongodb' => [
+            'class' => '\yii\mongodb\Connection',
+            'dsn' => 'mongodb+srv://root:1234@db01.uyg1g.mongodb.net/test',
+            'defaultDatabaseName'=>'ElectronicShop'
+    ]
+</h2>
+
+<h2>
     <p>
         หากไม่สามารถเปิดหน้าได้ โดยมันแจ้ง error เรื่อง vendor ให้ทำการติดตั้ง composer
     </p>
