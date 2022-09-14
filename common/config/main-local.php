@@ -11,8 +11,8 @@ return [
         // ],
         'mongodb' => [
             'class' => '\yii\mongodb\Connection',
-            'dsn' => 'mongodb://root:1234@127.0.0.1:27017',
-            'defaultDatabaseName'=>'yii2'
+            'dsn' => 'mongodb+srv://root:1234@db01.uyg1g.mongodb.net/test',
+            'defaultDatabaseName'=>'ElectronicShop'
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
