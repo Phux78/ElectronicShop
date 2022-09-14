@@ -1,3 +1,14 @@
+<h2>
+    <p>
+        หากไม่สามารถเปิดหน้าได้ โดยมันแจ้ง error เรื่อง vendor ให้ทำการติดตั้ง composer
+    </p>
+    <p>
+        <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fwww.hostinger.com%2Ftutorials%2Fhow-to-install-composer&h=AT0rkU2-uep1u58ROZZjOnmXiCRFYmJXf_FLF0ZksjOAImRTzCPGDNrY3QM3X4lPWZpnm7e0j8ZBVuQzCnWwmUJxgwm1dejGpCJVRBbktwxC3g8eI6jdP1H2_1YNEL26PgPrBQ">การติดตั้ง composer</a>
+        และใช้คำสั่ง <code>composer install</code> ในโฟลเดอร์ของ ElectronicShop
+    </p>
+    <p>หากมีปัญหากรุณาเปิด issue</p>
+</h2>
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
