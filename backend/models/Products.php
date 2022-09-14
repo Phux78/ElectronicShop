@@ -68,6 +68,8 @@ class Products extends \yii\mongodb\ActiveRecord
             'productName' => 'Product Name',
             'productPrice' => 'Product Price',
             'productImage' => 'Product Image',
+            // 'productImage' => 'Product Image_2',
+            // 'productImage' => 'Product Image_3',
             'productDescrip' => 'Product Descrip',
             'inStock' => 'In Stock',
             'status' => 'Status',
