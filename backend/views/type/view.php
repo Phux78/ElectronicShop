@@ -32,7 +32,19 @@ $this->params['breadcrumbs'][] = $this->title;
             '_id',
             'type_id',
             'typeName',
-            'status',
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    $text = "";
+                    if ($model->status == "1") {
+                        $text = "Active";
+                    } else {
+                        $text = "Inactive";
+                    }
+                    return $model->status . " (" . $text . ")";
+                }
+            ]
         ],
     ]) ?>
 

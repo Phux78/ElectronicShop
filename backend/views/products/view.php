@@ -34,9 +34,29 @@ $this->params['breadcrumbs'][] = $this->title;
             'productName',
             'productPrice',
             'productImage',
+            [
+                'label' => 'Image Preview',
+                'attribute' => 'productImage',
+                'format' => ['image', ['width' => '25%']],
+                'value' => function ($model) {
+                    return ($model->productImage);
+                }
+            ],
             'productDescrip',
             'inStock',
-            'status',
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    $text = "";
+                    if ($model->status == "1") {
+                        $text = "Active";
+                    } else {
+                        $text = "Inactive";
+                    }
+                    return $model->status." (".$text.")";
+                }
+            ],
             'type_id',
             'brand_id',
         ],

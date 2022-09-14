@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Products;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -8,6 +9,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProductsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+
 
 $this->title = 'Products';
 $this->params['breadcrumbs'][] = $this->title;
@@ -25,14 +27,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'tableOptions' => ['class'=> 'table table-striped'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            '_id',
+            // '_id',
             'product_id',
             'productName',
             'productPrice',
-            'productImage',
+            [
+                'attribute' => 'productImage',
+                'headerOptions' => ['class' => 'img-fluid text-center'],
+                'contentOptions' => ['class' => 'img-fluid text-center'],
+                'format' => ['image', ['width'=>'100px']],
+                'value' => function($model) {
+                    return ($model->productImage);
+                }
+            ],
+            // 'productImage',
             //'productDescrip',
             //'inStock',
             //'status',
