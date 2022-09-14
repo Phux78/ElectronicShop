@@ -3,7 +3,7 @@
     <p>ใช้ connection mongodb ตามนี้</p>
     'mongodb' => [
             'class' => '\yii\mongodb\Connection',
-            'dsn' => 'mongodb+srv://root:1234@db01.uyg1g.mongodb.net/test',
+            'dsn' => 'mongodb+srv://root:*****@db01.uyg1g.mongodb.net/test',
             'defaultDatabaseName'=>'ElectronicShop'
     ]
     <p>โดยให้ create database in mongocompass ก่อน ตั้งชื่อว่า ElectronicShop<p/>
