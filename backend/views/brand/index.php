@@ -31,8 +31,31 @@ $this->params['breadcrumbs'][] = $this->title;
             '_id',
             'brand_id',
             'brandName',
-            'brandImage',
-            'status',
+            [
+                'attribute' => 'brandImage',
+                'headerOptions' => ['class' => 'text-center'],
+                'contentOptions' => ['class' => 'img-fluid text-center'],
+                'format' => ['image', ['width' => '80px']],
+                'value' => function ($model) {
+                    return ($model->brandImage);
+                }
+            ],
+            // 'brandImage',
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'headerOptions' => ['class' => 'text-center'],
+                'contentOptions' => ['class' => 'text-center'],
+                'value' => function ($model) {
+                    $text = "";
+                    if ($model->status == "1") {
+                        $text = "Active";
+                    } else {
+                        $text = "Inactive";
+                    }
+                    return "<i>" . $text . "</i>";
+                },
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, $model, $key, $index, $column) {

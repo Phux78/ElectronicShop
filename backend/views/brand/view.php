@@ -33,7 +33,28 @@ $this->params['breadcrumbs'][] = $this->title;
             'brand_id',
             'brandName',
             'brandImage',
-            'status',
+            [
+                'label' => 'Image Preview',
+                'attribute' => 'brandImage',
+                'contentOptions' => ['class' => 'img-fluid'],
+                'format' => ['image', ['width' => '80px']],
+                'value' => function ($model) {
+                    return ($model->brandImage);
+                }
+            ],
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    $text = "";
+                    if ($model->status == "1") {
+                        $text = "Active";
+                    } else {
+                        $text = "Inactive";
+                    }
+                    return $model->status." (".$text.")";
+                }
+            ]
         ],
     ]) ?>
 
