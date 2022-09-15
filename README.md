@@ -6,11 +6,6 @@
     ]
 # โดยให้ create database in mongocompass ก่อน ตั้งชื่อว่า ElectronicShop<p/>
 
-
-
---******************************PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP*
-
-
 <h2>
     <p>
         หากไม่สามารถเปิดหน้าได้ โดยมันแจ้ง error เรื่อง vendor ให้ทำการติดตั้ง composer
