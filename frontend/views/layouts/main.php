@@ -40,6 +40,16 @@ AppAsset::register($this);
     <link rel="stylesheet" href="../../theme/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="../../theme/css/style.css">
+
+    <!-- google font -->
+    <style>
+        /* Change font here */
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap');
+
+        * {
+            font-family: 'Prompt', sans-serif !important;
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column h-100">

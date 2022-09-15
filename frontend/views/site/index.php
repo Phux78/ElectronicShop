@@ -45,7 +45,7 @@ $brand = Brand::find()->where(['status' => '1'])->all();
 
 
 <!-- product_list part start-->
-<section class="product_list best_seller section_padding">
+<section class="product_list best_seller section_padding" style="background-color: #F8F9FA;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
