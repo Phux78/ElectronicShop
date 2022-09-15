@@ -36,7 +36,6 @@ $this->title = $model->_id;
                         </div>
                         <div class="col-lg-5 col-xl-4">
                         <div class="s_product_text">
-                            <h5>previous <span>|</span> next</h5>
                             <h3><?=$model->productName ?></h3>
                             <h2>$<?=$model->productPrice ?></h2>
                             <ul class="list">
