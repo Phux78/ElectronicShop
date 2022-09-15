@@ -53,6 +53,9 @@ $brandName;
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
                                 <button class="btn btn-warning btn-sm btn-block mt-2">Buy now</button>
                             </div>
+                            <a href="index.php?r=products/view&_id=<?=$item->_id?>" class="btn-block genric-btn success radius">More Detail</a>
+                            <a href="">
+                            </a>
                         </div>
                     <?php } ?>
                 </div>
@@ -77,12 +80,14 @@ $brandName;
                 <div class="best_product_slider owl-carousel">
                     <?php foreach ($brand as $index => $item) { ?>
                         <div class="single_product_item">
-                            <div style="height: 100px;">
-                                <img src="<?= $item->brandImage ?>" alt="">
-                            </div>
-                            <div class="single_product_text">
-                                <h4><?= $item->brandName ?></h4>
-                            </div>
+                            <a href="#">
+                                <div style="height: 100px;">
+                                    <img src="<?= $item->brandImage ?>" alt="">
+                                </div>
+                                <div class="single_product_text">
+                                    <h4><?= $item->brandName ?></h4>
+                                </div>
+                            </a>
                         </div>
                     <?php } ?>
                 </div>
