@@ -93,8 +93,11 @@ AppAsset::register($this);
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?= Alert::widget() ?>
-            <?= $content ?>
+            <!-- [move content to outer container] -->
+            <!-- $content -->
         </div>
+        <?= $content ?>
+
     </main>
 
     <footer class="footer mt-auto py-3 text-muted">

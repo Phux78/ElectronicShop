@@ -3023,7 +3023,7 @@ ul {
 /* line 7, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_best_seller.scss */
 .best_seller .single_product_item .single_product_text {
   padding: 35px 0 0;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
