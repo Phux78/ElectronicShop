@@ -51,11 +51,8 @@ $brandName;
                                     </b>
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
-                                <button class="btn btn-warning btn-sm btn-block mt-2">Buy now</button>
                             </div>
-                            <a href="index.php?r=products/view&_id=<?=$item->_id?>" class="btn-block genric-btn success radius">More Detail</a>
-                            <a href="">
-                            </a>
+                            <a href="index.php?r=products/view&_id=<?= $item->_id ?>" class="btn btn-warning btn-sm btn-block mt-2">More Detail</a>
                         </div>
                     <?php } ?>
                 </div>
