@@ -12,7 +12,7 @@ $product = Products::find()->where(['status' => '1'])->all();
         <?php foreach ($product as $index => $model) { ?>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="<?= $model->productImage ?>" class="card-img-top" alt="...">
+                    <img src="<?= $model->productImage[0] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= $model->productName ?></h5>
                         <p class="card-text"><?= $model->productDescrip ?></p>
