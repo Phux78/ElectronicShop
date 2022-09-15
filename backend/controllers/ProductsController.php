@@ -71,6 +71,8 @@ class ProductsController extends Controller
         $model = new Products();
 
         if ($this->request->isPost) {
+            // var_dump($this->request->post());
+            // exit();
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', '_id' => (string) $model->_id]);
             }

@@ -33,13 +33,22 @@ $this->params['breadcrumbs'][] = $this->title;
             'product_id',
             'productName',
             'productPrice',
-            'productImage',
+            // 'productImage',
+            [
+                'attribute' => 'productImage',
+                'format' => 'raw',
+                // 'headerOptions' => ['class' => 'text-center'],
+                //'contentOptions' => ['class' => 'text-center'],
+                'value' => function ($model) {
+                    return implode(",", $model->productImage);
+                },
+            ],
             [
                 'label' => 'Image Preview',
                 'attribute' => 'productImage',
                 'format' => ['image', ['width' => '25%']],
                 'value' => function ($model) {
-                    return ($model->productImage);
+                    return ($model->productImage[0]);
                 }
             ],
             'productDescrip',
@@ -58,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'type_id',
-            'brand_id',
+            'brand_id'
         ],
     ]) ?>
 

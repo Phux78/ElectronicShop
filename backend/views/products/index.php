@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => ['class' => 'img-fluid text-center'],
                 'format' => ['image', ['width'=>'100px']],
                 'value' => function($model) {
-                    return ($model->productImage);
+                    return ($model->productImage[0]);
                 }
             ],
             // 'productImage',
