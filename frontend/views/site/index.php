@@ -34,6 +34,9 @@ $brand = Brand::find()->where(['status' => '1'])->all();
                             <div class="single_product_text mt-5">
                                 <h4><?= $item->productName ?></h4>
                             </div>
+                            <a href="index.php?r=products/view&_id=<?=$item->_id?>" class="btn btn-info btn-block">Add to Cart</a>
+                            <a href="">
+                            </a>
                         </div>
                     <?php } ?>
                 </div>
@@ -59,12 +62,14 @@ $brand = Brand::find()->where(['status' => '1'])->all();
                 <div class="best_product_slider owl-carousel">
                     <?php foreach ($brand as $index => $item) { ?>
                         <div class="single_product_item">
-                            <div style="height: 100px;">
-                                <img src="<?= $item->brandImage ?>" alt="">
-                            </div>
-                            <div class="single_product_text">
-                                <h4><?= $item->brandName ?></h4>
-                            </div>
+                            <a href="#">
+                                <div style="height: 100px;">
+                                    <img src="<?= $item->brandImage ?>" alt="">
+                                </div>
+                                <div class="single_product_text">
+                                    <h4><?= $item->brandName ?></h4>
+                                </div>
+                            </a>
                         </div>
                     <?php } ?>
                 </div>
