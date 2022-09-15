@@ -13,7 +13,7 @@ $brandName;
 
 <!-- product_list part start-->
 <!-- New Products -->
-<section class="product_list best_seller section_padding">
+<section class="product_list best_seller" style="margin: 70px 0;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -46,8 +46,9 @@ $brandName;
                                     <b style="color: #F1574F;">
                                         $ <?= number_format($item->productPrice) ?>
                                     </b>
+                                    <!-- price before discount -->
                                     <b style="color: #BDBDBD; text-decoration: line-through;">
-                                        $ <?= number_format($item->productPrice + 499) ?>
+                                        $ <?= number_format($item->productPrice + 2000) ?>
                                     </b>
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
