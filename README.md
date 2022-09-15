@@ -18,7 +18,7 @@
 </h2>
 
 <p>
-    <a href="https://themewagon.com/themes/free-bootstrap-ecommerce-template-electro/">Frontend Template</a>
+    <a href="https://themewagon.com/themes/free-bootstrap-4-html5-ecommerce-website-template-aranoz/">Frontend Template</a>
 </p>
 
 <p align="center">
