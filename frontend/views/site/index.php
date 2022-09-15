@@ -34,7 +34,7 @@ $brand = Brand::find()->where(['status' => '1'])->all();
                             <div class="single_product_text mt-5">
                                 <h4><?= $item->productName ?></h4>
                             </div>
-                            <a href="index.php?r=products/view&_id=<?=$item->_id?>" class="btn btn-info btn-block">Add to Cart</a>
+                            <a href="index.php?r=products/view&_id=<?=$item->_id?>" class="btn-block genric-btn success radius">More Detail</a>
                             <a href="">
                             </a>
                         </div>
