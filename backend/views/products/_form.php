@@ -21,11 +21,11 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'productPrice') ?>
 
-    <?= $form->field($model, 'productImage[0]') ?>
+    <?= $form->field($model, 'productImage[0]')->label("ImageUrl 1") ?>
 
-    <?= $form->field($model, 'productImage[1]') ?>
+    <?= $form->field($model, 'productImage[1]')->label("ImageUrl 2") ?>
 
-    <?= $form->field($model, 'productImage[2]') ?>
+    <?= $form->field($model, 'productImage[2]')->label("ImageUrl 3") ?>
 
     <?= $form->field($model, 'productDescrip')->textarea(['rows' => '6']) ?>
 
