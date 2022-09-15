@@ -18,9 +18,6 @@ $brand = Brand::find()->where(['status' => '1'])->all();
             <div class="col-lg-12">
                 <div class="section_tittle text-center">
                     <h2>New Products</h2>
-                    <h4>
-                        <a href="index.php?r=site%2FallProducts">ดูทั้งหมด</a>
-                    </h4>
                 </div>
             </div>
         </div>
@@ -36,11 +33,15 @@ $brand = Brand::find()->where(['status' => '1'])->all();
                             </div>
                             <div class="single_product_text mt-5">
                                 <h4><?= $item->productName ?></h4>
-                                <b>
+                                <span><?= $item->type_id ?></span>
+                                <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">
                                         ฿ <?= number_format($item->productPrice) ?>
                                     </b>
-                                </b>
+                                    <b style="color: #BDBDBD; text-decoration: line-through;">
+                                        ฿ <?= number_format($item->productPrice) ?>
+                                    </b>
+                                </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
                                 <button class="btn btn-warning btn-sm btn-block mt-2">Buy now</button>
                             </div>

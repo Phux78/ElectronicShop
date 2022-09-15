@@ -33,7 +33,7 @@ use yii\bootstrap4\ActiveForm;
                 </div>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

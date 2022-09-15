@@ -27,7 +27,7 @@ use yii\bootstrap4\ActiveForm;
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary btn-block', 'name' => 'signup-button']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
