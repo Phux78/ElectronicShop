@@ -47,7 +47,7 @@ $brandName;
                                         ฿ <?= number_format($item->productPrice) ?>
                                     </b>
                                     <b style="color: #BDBDBD; text-decoration: line-through;">
-                                        ฿ <?= number_format($item->productPrice) ?>
+                                        ฿ <?= number_format($item->productPrice+499) ?>
                                     </b>
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>

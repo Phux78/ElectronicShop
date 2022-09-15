@@ -41,6 +41,9 @@ AppAsset::register($this);
     <!-- style CSS -->
     <link rel="stylesheet" href="../../theme/css/style.css">
 
+    <!-- custom css -->
+    <link rel="stylesheet" href="../../theme/css/custom.css">
+
     <!-- google font -->
     <style>
         /* Change font here */
@@ -56,6 +59,11 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
 
     <header>
+        <div class="tiny-header">
+            <div class="container">
+                สินค้าทุกชิ้นมีการรับประกัน, ซื้อวันนี้แถมฟรีคู่มือการใช้งาน
+            </div>
+        </div>
         <?php
         NavBar::begin([
             'brandLabel' => "<h1 class='custom-brand-label'>Electronic Shop</h1>",
