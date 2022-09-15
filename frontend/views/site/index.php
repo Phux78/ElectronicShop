@@ -8,6 +8,7 @@ use app\models\Brand;
 $this->title = 'ElectronicShop';
 $product = Products::find()->where(['status' => '1'])->all();
 $brand = Brand::find()->where(['status' => '1'])->all();
+$brandName;
 ?>
 
 <!-- product_list part start-->
@@ -33,7 +34,14 @@ $brand = Brand::find()->where(['status' => '1'])->all();
                             </div>
                             <div class="single_product_text mt-5">
                                 <h4><?= $item->productName ?></h4>
-                                <span><?= $item->type_id ?></span>
+                                <?php
+                                    foreach($brand as $index => $brand_item) {
+                                        if($brand_item->brand_id == $item->brand_id) {
+                                            $brandName = $brand_item->brandName;
+                                        }
+                                    }
+                                ?>
+                                <p><?= $brandName ?></p>
                                 <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">
                                         ฿ <?= number_format($item->productPrice) ?>
