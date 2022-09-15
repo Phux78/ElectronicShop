@@ -71,8 +71,9 @@ AppAsset::register($this);
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
+                    // 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Logout ',
+                    ['class' => 'btn btn-warning']
                 )
                 . Html::endForm()
                 . '</li>';
@@ -80,7 +81,7 @@ AppAsset::register($this);
         ?>
         <?php
         echo Nav::widget([
-            'options' => ['class' => 'navbar-nav ml-auto'],
+            'options' => ['class' => 'navbar-nav ml-auto '],
             'items' => $menuItems,
         ]);
         NavBar::end();
