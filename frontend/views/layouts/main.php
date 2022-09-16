@@ -67,7 +67,13 @@ AppAsset::register($this);
                             สินค้าทุกชิ้นมีการรับประกัน, ซื้อวันนี้แถมฟรีคู่มือการใช้งาน
                         </div>
                         <div>
-                            Hello <?php echo Yii::$app->user->identity->username ?>
+                            <?php 
+                                if(!Yii::$app->user->isGuest) {
+                                    echo "Hello ".Yii::$app->user->identity->username;
+                                } else {
+                                    echo "กรุณาเข้าสู่ระบบก่อนซื้อสินค้า";
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
