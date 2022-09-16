@@ -85,14 +85,14 @@ AppAsset::register($this);
             $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
-            $menuItems[] = ['label' => 'Profile', 'url' => ['/personal-info/view&_id=<?= ?>']];
+            $menuItems[] = ['label' => 'Profile', 'url' => ['personal-info/index']];
             $menuItems[] = ['label' => 'Cart', 'url' => ['/cart/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
                     // 'Logout (' . Yii::$app->user->identity->username . ')',
                     'Logout ',
-                    ['class' => 'genric-btn warning circle']
+                    ['class' => 'btn btn-warning btn-sm mt-1 ml-4']
                 )
                 . Html::endForm()
                 . '</li>';

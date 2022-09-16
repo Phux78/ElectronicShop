@@ -8,7 +8,7 @@ use app\models\ProductsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii;
+use Yii;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -41,26 +41,26 @@ class ProductsController extends Controller
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
+    
     public function actionView($_id)
     {
         $cartModel = new Cart();
+
         if ($this->request->isPost && $cartModel->load($this->request->post())) {
-            $cart = Cart::find()->where(["user_id"=>(String)Yii::$app->user->identity->id])->where(['product_id'=>$cartModel->product_id,
-            'price'=>$cartModel->price])->one();
-            // 'product_id' => 'Product ID',
-            // 'price' => 'Price',
-            // 'quantity' => 'Quantity',
-            // 'user_id' => 'User ID',
-            if(!empty($cart)){
-                $cartModel = Cart::findOne(['_id'=>$cart->_id]);
-                $cartModel->quantity = (String)((int)$cart->quantity + 1) ;
+            $cart = Cart::find()->where(['user_id' => (string)Yii::$app->user->identity->id, 'product_id' => $cartModel->product_id])->one();
+
+            if (!empty($cart)) {
+                $cartModel = Cart::findOne(['_id' => $cart->_id]);
+                $cartModel->quantity = (string)((int)$cartModel->quantity + 1);
             }
             $cartModel->save();
+
             return $this->redirect(['cart/index']);
         }
         return $this->render('view', [
             'model' => $this->findModel($_id),
             'product_id' => $_id,
+
             'cartModel' => $cartModel
         ]);
     }
