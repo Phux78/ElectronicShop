@@ -16,10 +16,19 @@ $this->title = 'Carts';
 // $this->params['breadcrumbs'][] = $this->title;
 $total = 0;
 $subtotal = 0;
+$amount = 0;
 ?>
 <!--  -->
 <section class="cart_area section_padding">
   <div class="container">
+    <h1>Cart</h1>
+    <?php
+      foreach($cart as $index => $item) {
+        $amount += $item->quantity;
+      }
+    ?>
+    <p>คุณมีสินค้าทั้งหมด <?= $amount ?> ชั้น</p>
+    <br>
     <div class="cart_inner">
       <div class="table-responsive">
         <table class="table">
@@ -78,7 +87,7 @@ $subtotal = 0;
             endforeach; ?>
             <tr class="bottom_button">
               <td>
-                <a class="btn_1" href="#">Update Cart</a>
+                <a class="btn_1" href="index.php?r=cart%2Findex">Update Cart</a>
               </td>
               <td></td>
               <td></td>
@@ -103,8 +112,8 @@ $subtotal = 0;
           </tbody>
         </table>
         <div class="checkout_btn_inner float-right">
-          <?= Html::a('Continue Shopping', ['/site/index'], ['class'=>'btn_1']) ?>
-          <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+          <?= Html::a('Continue Shopping', ['/site/index'], ['class' => 'btn_1']) ?>
+          <a class="btn_1 checkout_btn_1 bg-primary text-light" href="#">Proceed to checkout</a>
         </div>
       </div>
     </div>
