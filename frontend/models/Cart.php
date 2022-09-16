@@ -56,7 +56,6 @@ class Cart extends \yii\mongodb\ActiveRecord
     {
         return [
             '_id' => 'ID',
-            'cart_id' => 'Cart ID',
             'product_id' => 'Product ID',
             'price' => 'Price',
             'quantity' => 'Quantity',
