@@ -53,7 +53,7 @@ $brandName;
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
                             </div>
-                            <a href="index.php?r=products/view&_id=<?= $item->_id ?>" class="btn btn-warning btn-sm btn-block mt-2">More Detail</a>
+                            <a href="index.php?r=products/view&_id=<?= $item->product_id ?>" class="btn btn-warning btn-sm btn-block mt-2">More Detail</a>
                         </div>
                     <?php } ?>
                 </div>

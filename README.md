@@ -1,4 +1,9 @@
-# ใน backend->common->config->main-local <br> ใช้ connection mongodb ตามนี้
+# ใน common-> models -> User ให้เปลี่ยน function CollectionName() ตามนี้
+    'public static function CollectionName()
+    {
+        return ['ElectronicShop','users'];
+    }'
+# ใน common->config->main-local <br> ใช้ connection mongodb ตามนี้
     'mongodb' => [
             'class' => '\yii\mongodb\Connection',
             'dsn' => 'mongodb+srv://root:*****@db01.uyg1g.mongodb.net/test',
