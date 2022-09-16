@@ -20,7 +20,7 @@ $brandName;
             <div class="col-lg-12">
                 <div class="section_tittle text-center">
                     <h2>New Products</h2>
-                    <?= Html::a('ชมสินค้าทั้งหมด', ['/site/all-product'], ['class' => 'h5']) ?>
+                    <?= Html::a('ชมสินค้าทั้งหมด >', ['/site/all-product'], ['class' => 'h5']) ?>
                 </div>
             </div>
         </div>

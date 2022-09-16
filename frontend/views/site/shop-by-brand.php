@@ -14,7 +14,7 @@ $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
         <h1 class="h1 mt-2"><?= $brandName ?></h1>
         <div class="row">
             <?php foreach ($product as $index => $model) { ?>
-                <div class="col-md-3">
+                <div class="col-md-3" style="margin-bottom: 4em;">
                     <!-- card item -->
                     <div class="single_product_model">
                         <div style="height: 220px;">

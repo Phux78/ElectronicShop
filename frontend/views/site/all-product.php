@@ -14,9 +14,10 @@ $typeName;
 <section style="margin: 70px 0">
     <div class="container">
         <h1>All Products</h1>
+        <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'h5']) ?>
         <div class="row">
             <?php foreach ($product as $index => $model) { ?>
-                <div class="col-md-3">
+                <div class="col-md-3" style="margin-bottom: 4em;">
                     <!-- card item -->
                     <div class="single_product_model">
                         <div style="height: 220px;">
@@ -24,7 +25,7 @@ $typeName;
                         </div>
                         <div class="single_product_text mt-5" style="height: 220px;">
                             <h4><?= $model->productName ?></h4>
-                            <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName;?>
+                            <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName; ?>
                             <p><?= $brandName ?></p>
                             <div class="d-flex justify-content-between">
                                 <b style="color: #F1574F;">
