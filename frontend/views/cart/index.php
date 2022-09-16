@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Products;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -11,43 +12,11 @@ use yii\grid\GridView;
 
 $this->title = 'Carts';
 // $this->params['breadcrumbs'][] = $this->title;
+$total = 0;
+$subtotal = 0;
 ?>
 <!--  -->
-<div class="container">
-    <div class="cart-index">
-
-        <h1><?= Html::encode($this->title) ?></h1>
-
-        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-
-                '_id',
-                'product_id',
-                'price',
-                'quantity',
-                //'user_id',
-                [
-                    'class' => ActionColumn::className(),
-                    'urlCreator' => function ($action, $model, $key, $index, $column) {
-                        return Url::toRoute([$action, '_id' => (string) $model->_id]);
-                    }
-                ],
-            ],
-        ]); ?>
-
-
-    </div>
-</div>
-
-
-
-<!--================Cart Area =================-->
-<!-- <section class="cart_area padding_top">
+<section class="cart_area padding_top">
     <div class="container">
       <div class="cart_inner">
         <div class="table-responsive">
@@ -61,102 +30,49 @@ $this->title = 'Carts';
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="img/product/single-product/cart-1.jpg" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <p>Minimalistic shop for multipurpose use</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <h5>$360.00</h5>
-                </td>
-                <td>
-                  <div class="product_count">
-                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                    <input class="input-number" type="text" value="1" min="0" max="10">
-                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                  </div>
-                </td>
-                <td>
-                  <h5>$720.00</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="img/product/single-product/cart-1.jpg" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <p>Minimalistic shop for multipurpose use</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <h5>$360.00</h5>
-                </td>
-                <td>
-                  <div class="product_count">
-                    <!-- <input type="text" value="1" min="0" max="10" title="Quantity:"
-                      class="input-text qty input-number" />
-                    <button
-                      class="increase input-number-increment items-count" type="button">
-                      <i class="ti-angle-up"></i>
-                    </button>
-                    <button
-                      class="reduced input-number-decrement items-count" type="button">
-                      <i class="ti-angle-down"></i>
-                    </button> -->
-                    <!-- <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                    <input class="input-number" type="text" value="1" min="0" max="10">
-                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                  </div>
-                </td>
-                <td>
-                  <h5>$720.00</h5>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="img/product/single-product/cart-1.jpg" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <p>Minimalistic shop for multipurpose use</p>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <h5>$360.00</h5>
-                </td>
-                <td>
-                  <div class="product_count">
-                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                    <input class="input-number" type="text" value="1" min="0" max="10">
-                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                  </div>
-                </td>
-                <td>
-                  <h5>$720.00</h5>
-                </td>
-              </tr>
-              <tr class="bottom_button">
-                <td>
-                  <a class="btn_1" href="#">Update Cart</a>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                  <div class="cupon_text float-right">
-                    <a class="btn_1" href="#">Close Coupon</a>
-                  </div>
-                </td>
+                <?php foreach ($cart as $model) : 
+                    $subtotal += (int)$model->quantity * (int)$model->price; 
+                    $product = Products::find()->where(["product_id"=> $model->product_id])->one();    
+                    $total += (int)$model->quantity * (int)$product->productPrice; 
+                    // var_dump($product);
+                ?>
+                <tr>
+                    <td>
+                        <div class="media">
+                            <div class="d-flex " style="height: 220px;" >
+                                <img src="<?=$product->productImage[0]?>" alt="" />
+                            </div>
+                            <div class="media-body">
+                            <p><?=$product->productName?></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h5><?=$model->price?></h5>
+                    </td>
+                    <td>
+                        <div class="product_count">
+                            <!-- <span class="input-number-decrement"> <i class="ti-angle-down"></i></span> -->
+                            <input class="input-number" type="text" value="<?=$model->quantity?>" min="0" max="10">
+                            <!-- <span class="input-number-increment"> <i class="ti-angle-up"></i></span> -->
+                        </div>
+                    </td>
+                    <td>    
+                        <h5>$<?= $total ?></h5>
+                    </td>
+                </tr>
+                <?php $total = 0 ;endforeach; ?>
+                <tr class="bottom_button">
+                    <td>
+                        <a class="btn_1" href="#">Update Cart</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="cupon_text float-right">
+                            <a class="btn_1" href="#">Close Coupon</a>
+                        </div>
+                    </td>
               </tr>
               <tr>
                 <td></td>
@@ -165,48 +81,7 @@ $this->title = 'Carts';
                   <h5>Subtotal</h5>
                 </td>
                 <td>
-                  <h5>$2160.00</h5>
-                </td>
-              </tr>
-              <tr class="shipping_area">
-                <td></td>
-                <td></td>
-                <td>
-                  <h5>Shipping</h5>
-                </td>
-                <td>
-                  <div class="shipping_box">
-                    <ul class="list">
-                      <li>
-                        <a href="#">Flat Rate: $5.00</a>
-                      </li>
-                      <li>
-                        <a href="#">Free Shipping</a>
-                      </li>
-                      <li>
-                        <a href="#">Flat Rate: $10.00</a>
-                      </li>
-                      <li class="active">
-                        <a href="#">Local Delivery: $2.00</a>
-                      </li>
-                    </ul>
-                    <h6>
-                      Calculate Shipping
-                      <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </h6>
-                    <select class="shipping_select">
-                      <option value="1">Bangladesh</option>
-                      <option value="2">India</option>
-                      <option value="4">Pakistan</option>
-                    </select>
-                    <select class="shipping_select section_bg">
-                      <option value="1">Select a State</option>
-                      <option value="2">Select a State</option>
-                      <option value="4">Select a State</option>
-                    </select>
-                    <input type="text" placeholder="Postcode/Zipcode" />
-                    <a class="btn_1" href="#">Update Details</a>
-                  </div>
+                  <h5>$<?= $subtotal ?></h5>
                 </td>
               </tr>
             </tbody>
@@ -217,5 +92,11 @@ $this->title = 'Carts';
           </div>
         </div>
       </div>
-  </section> --> 
+  </section> 
+
+
+
+
+<!--================Cart Area =================-->
+<!-- --> 
   <!--================End Cart Area =================-->
