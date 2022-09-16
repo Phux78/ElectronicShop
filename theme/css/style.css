@@ -3045,7 +3045,7 @@ ul {
 }
 
 /* line 20, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_best_seller.scss */
-.best_seller .single_product_item .single_product_text a {
+.best_seller .single_product_item .single_product_text a:not([shopbybrand]) {
   color: #ff3368;
   text-transform: uppercase;
   font-size: 18px;

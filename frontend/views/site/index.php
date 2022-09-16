@@ -36,13 +36,7 @@ $brandName;
                             </div>
                             <div class="single_product_text mt-5" style="height: 220px;">
                                 <h4><?= $item->productName ?></h4>
-                                <?php
-                                foreach ($brand as $index => $brand_item) {
-                                    if ($brand_item->brand_id == $item->brand_id) {
-                                        $brandName = $brand_item->brandName;
-                                    }
-                                }
-                                ?>
+                                <?php $brandName = Brand::find()->where(['brand_id' => $item->brand_id])->one()->brandName; ?>
                                 <p><?= $brandName ?></p>
                                 <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">
@@ -80,12 +74,17 @@ $brandName;
                 <div class="best_product_slider owl-carousel">
                     <?php foreach ($brand as $index => $item) { ?>
                         <div class="single_product_item">
-                            <a href="#">
+                            <a href="index.php?r=site/shop-by-brand&brand_id=<?= $item->brand_id ?>">
                                 <div style="height: 100px;">
                                     <img src="<?= $item->brandImage ?>" alt="">
                                 </div>
                                 <div class="single_product_text">
-                                    <h4><?= $item->brandName ?></h4>
+                                    <!--
+                                        http://localhost/ElectronicShop/frontend/web/index.php?r=site/shop-by-brand&brand_id=b002 
+                                    -->
+                                    <a href="index.php?r=site/shop-by-brand&brand_id=<?= $item->brand_id ?>" class="pt-2" id="shopbybrand">
+                                        <h4><?= $item->brandName ?></h4>
+                                    </a>
                                 </div>
                             </a>
                         </div>

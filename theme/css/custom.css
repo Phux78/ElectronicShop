@@ -22,3 +22,10 @@
 .section-padding-custom {
     margin: 60px 0;
 }
+
+#shopbybrand {
+    display: block !important;
+    opacity: 100% !important;
+    transition: none !important;
+    visibility: visible !important;
+}
