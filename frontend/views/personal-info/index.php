@@ -9,9 +9,10 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PersonalInfoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Personal Infos';
-$this->params['breadcrumbs'][] = $this->title;
+// $this->title = 'Personal Infos';
+// $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="container">
 <div class="personal-info-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -46,4 +47,5 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 
+</div>
 </div>

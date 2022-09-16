@@ -85,6 +85,7 @@ AppAsset::register($this);
             $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
+            $menuItems[] = ['label' => 'Profile', 'url' => ['/personal-info/view&_id=<?= ?>']];
             $menuItems[] = ['label' => 'Cart', 'url' => ['/cart/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
