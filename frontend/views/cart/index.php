@@ -18,7 +18,7 @@ $total = 0;
 $subtotal = 0;
 ?>
 <!--  -->
-<section class="cart_area padding_top">
+<section class="cart_area section_padding">
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">
@@ -97,13 +97,13 @@ $subtotal = 0;
                 <h5>Subtotal</h5>
               </td>
               <td>
-                <h5>$<?= $subtotal ?></h5>
+                <h5>$ <?= number_format($subtotal) ?></h5>
               </td>
             </tr>
           </tbody>
         </table>
         <div class="checkout_btn_inner float-right">
-          <a class="btn_1" href="#">Continue Shopping</a>
+          <?= Html::a('Continue Shopping', ['/site/index'], ['class'=>'btn_1']) ?>
           <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
         </div>
       </div>
