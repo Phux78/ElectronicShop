@@ -61,7 +61,16 @@ AppAsset::register($this);
     <header>
         <div class="tiny-header">
             <div class="container">
-                สินค้าทุกชิ้นมีการรับประกัน, ซื้อวันนี้แถมฟรีคู่มือการใช้งาน
+                <div class="container">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            สินค้าทุกชิ้นมีการรับประกัน, ซื้อวันนี้แถมฟรีคู่มือการใช้งาน
+                        </div>
+                        <div>
+                            Hello <?php echo Yii::$app->user->identity->username ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <?php

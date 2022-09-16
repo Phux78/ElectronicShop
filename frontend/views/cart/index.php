@@ -18,7 +18,7 @@ $total = 0;
 $subtotal = 0;
 ?>
 <!--  -->
-<section class="cart_area padding_top">
+<section class="cart_area section_padding">
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">
