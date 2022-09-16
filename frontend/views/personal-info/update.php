@@ -10,12 +10,14 @@ $this->params['breadcrumbs'][] = ['label' => 'Personal Infos', 'url' => ['index'
 $this->params['breadcrumbs'][] = ['label' => $model->_id, 'url' => ['view', '_id' => (string) $model->_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="personal-info-update">
+ <div class="container">
+    <div class="personal-info-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
 
+    </div>
 </div>

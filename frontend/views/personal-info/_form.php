@@ -2,17 +2,20 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\models\User;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PersonalInfo */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="personal-info-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'user_id') ?>
+    <?= $form->field($model, 'user_id')->hiddenInput(['value'=>(String)Yii::$app->user->identity->id])->label(false); ?>
 
     <?= $form->field($model, 'fname') ?>
 
