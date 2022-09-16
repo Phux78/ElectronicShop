@@ -132,7 +132,7 @@ $form = ActiveForm::begin(); ?>
                             echo $form->field($cartModel, 'price')->hiddenInput(['value' => $model->productPrice])->label(false);
                             echo $form->field($cartModel, 'user_id')->hiddenInput(['value' => Yii::$app->user->identity->id])->label(false);
                             echo $form->field($cartModel, 'quantity')->hiddenInput(['value' => 1])->label(false);
-                            echo Html::submitButton('Add to cart', ['class' => 'btn_3 ']);
+                            echo Html::submitButton('Add to cart', ['class' => 'btn_3']);
                         }
                         ?>
                         <a href="#" class="like_us ml-5"> <i class="ti-heart"></i> </a>

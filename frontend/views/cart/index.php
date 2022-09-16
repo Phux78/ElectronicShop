@@ -43,7 +43,8 @@ $subtotal = 0;
                                 <img src="<?=$product->productImage[0]?>" alt="" />
                             </div>
                             <div class="media-body">
-                            <p><?=$product->productName?></p>
+                            <p>
+                              <?=$product->productName?></p>
                             </div>
                         </div>
                     </td>
@@ -53,7 +54,7 @@ $subtotal = 0;
                     <td>
                         <div class="product_count">
                             <!-- <span class="input-number-decrement"> <i class="ti-angle-down"></i></span> -->
-                            <input class="input-number" type="text" value="<?=$model->quantity?>" min="0" max="10">
+                            <input class="input-number" type="text" value="<?=$model->quantity?>" min="0" max="10" disabled>
                             <!-- <span class="input-number-increment"> <i class="ti-angle-up"></i></span> -->
                         </div>
                     </td>
