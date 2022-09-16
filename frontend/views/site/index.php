@@ -32,7 +32,7 @@ $brandName;
                             <div style="height: 220px;">
                                 <img src="<?= $item->productImage[1] ?>" alt="">
                             </div>
-                            <div class="single_product_text mt-5">
+                            <div class="single_product_text mt-5" style="height: 220px;">
                                 <h4><?= $item->productName ?></h4>
                                 <?php
                                 foreach ($brand as $index => $brand_item) {
