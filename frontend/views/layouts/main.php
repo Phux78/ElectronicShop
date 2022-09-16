@@ -92,7 +92,7 @@ AppAsset::register($this);
                 . Html::submitButton(
                     // 'Logout (' . Yii::$app->user->identity->username . ')',
                     'Logout ',
-                    ['class' => 'genric-btn warning circle']
+                    ['class' => 'btn btn-warning btn-sm mt-1 ml-4']
                 )
                 . Html::endForm()
                 . '</li>';
