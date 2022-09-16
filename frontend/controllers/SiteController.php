@@ -256,4 +256,9 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+    // all product
+    public function actionAllProduct() {
+        return $this->render("all-product");
+    }
 }

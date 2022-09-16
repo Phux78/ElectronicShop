@@ -87,6 +87,7 @@ AppAsset::register($this);
         // php header replace here
         $menuItems = [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'All Products', 'url' => ['site/all-product']],
             // ['label' => 'About', 'url' => ['/site/about']],
             // ['label' => 'Contact', 'url' => ['/site/contact']],
         ];
