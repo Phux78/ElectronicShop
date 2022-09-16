@@ -104,14 +104,26 @@ $form = ActiveForm::begin(); ?>
                     <p>
                         <?= $model->productDescrip ?>
                     </p>
-                    <div class="card_area d-flex justify-content-between align-items-center">
+                    <div class="card_area d-flex justify-content-between align-items-center mr-5 pr-5">
                         <div class="product_count">
                             <span class="inumber-decrement"> <i class="ti-minus"></i></span>
                             <input class="input-number" type="text" value="1" min="0" max="10">
                             <span class="number-increment"> <i class="ti-plus"></i></span>
                         </div>
-                        <a href="#" class="btn_3">add to cart</a>
-                        <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
+                        <!-- <a href="#" class="btn_3">add to cart</a> -->
+                        <!-- <a href="#" class="like_us"> <i class="ti-heart"></i> </a> -->
+                        <?php 
+                            if (Yii::$app->user->isGuest) { ?>
+                                <a href="index.php?r=site%2Flogin" class="btn_3 ml-5">Add to Cart</a>
+                        <?php } else {
+                                echo $form->field($cartModel, 'product_id')->hiddenInput(['value'=>$product_id])->label(false);
+                                echo $form->field($cartModel, 'price')->hiddenInput(['value'=>$model->productPrice])->label(false);
+                                echo $form->field($cartModel, 'user_id')->hiddenInput(['value'=>Yii::$app->user->identity->id])->label(false);
+                                echo $form->field($cartModel, 'quantity')->hiddenInput(['value'=>1])->label(false);
+                                echo Html::submitButton('Add to cart', ['class' => 'btn_3 ']) ;
+                            }
+                        ?>
+                        <a href="#" class="like_us ml-5"> <i class="ti-heart"></i> </a>
                     </div>
                 </div>
             </div>

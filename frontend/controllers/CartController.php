@@ -7,6 +7,7 @@ use app\models\CartSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii;
 
 /**
  * CartController implements the CRUD actions for Cart model.
@@ -38,13 +39,19 @@ class CartController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CartSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        if (Yii::$app->user->isGuest)
+            $this->redirect(['site/login']);
+        else {
+            $searchModel = new CartSearch();
+            $dataProvider = $searchModel->search($this->request->queryParams);
+    
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+
+        }
     }
 
     /**
