@@ -20,8 +20,6 @@ $this->title = $model->productName . " - Electronic Shop";
 \yii\web\YiiAsset::register($this);
 
 // variables
-$brand = Brand::find()->where(['status' => '1'])->all();
-$type = Type::find()->where(['status' => '1'])->all();
 $product = Products::find()->where(['status' => '1'])->all();
 $brandName;
 $typeName;
@@ -83,26 +81,14 @@ $form = ActiveForm::begin(); ?>
                         </li> -->
                         <!-- brand -->
                         <li>
-                            <?php
-                            foreach ($brand as $index => $brand_item) {
-                                if ($brand_item->brand_id == $model->brand_id) {
-                                    $brandName = $brand_item->brandName;
-                                }
-                            }
-                            ?>
+                            <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName; ?>
                             <a href="#">
                                 <span>Brand</span> : <?= $brandName ?>
                             </a>
                         </li>
                         <!-- type -->
                         <li>
-                            <?php
-                            foreach ($type as $index => $type_item) {
-                                if ($type_item->type_id == $model->type_id) {
-                                    $typeName = $type_item->typeName;
-                                }
-                            }
-                            ?>
+                            <?php $typeName = Type::find()->where(['type_id' => $model->type_id])->one()->typeName; ?>
                             <a href="#">
                                 <span>Type</span> : <?= $typeName ?>
                             </a>
@@ -166,13 +152,7 @@ $form = ActiveForm::begin(); ?>
                             </div>
                             <div class="single_product_text mt-5" style="height: 220px;">
                                 <h4><?= $item->productName ?></h4>
-                                <?php
-                                foreach ($brand as $index => $brand_item) {
-                                    if ($brand_item->brand_id == $item->brand_id) {
-                                        $brandName = $brand_item->brandName;
-                                    }
-                                }
-                                ?>
+                                <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName; ?>
                                 <p><?= $brandName ?></p>
                                 <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">

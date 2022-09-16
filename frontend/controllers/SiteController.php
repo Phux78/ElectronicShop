@@ -261,4 +261,9 @@ class SiteController extends Controller
     public function actionAllProduct() {
         return $this->render("all-product");
     }
+
+    // shop by brand
+    public function actionShopByBrand($brand_id) {
+        return $this->render("shop-by-brand", ["brand_id" => $brand_id]);
+    }
 }

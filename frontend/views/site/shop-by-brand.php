@@ -5,15 +5,13 @@ use app\models\Products;
 use app\models\Brand;
 use app\models\Type;
 // variables
-$type = Type::find()->where(['status' => '1'])->all();
-$product = Products::find()->where(['status' => '1'])->all();
-$brandName;
-$typeName;
+$product = Products::find()->where(['status' => '1'])->where(['brand_id' => $brand_id])->all();
+$brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
 ?>
 
-<section style="margin: 70px 0">
+<section style="margin: 70px 0;">
     <div class="container">
-        <h1>All Products</h1>
+        <h1 class="h1 mt-2"><?= $brandName ?></h1>
         <div class="row">
             <?php foreach ($product as $index => $model) { ?>
                 <div class="col-md-3">
@@ -24,8 +22,6 @@ $typeName;
                         </div>
                         <div class="single_product_text mt-5" style="height: 220px;">
                             <h4><?= $model->productName ?></h4>
-                            <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName;
-                            ?>
                             <p><?= $brandName ?></p>
                             <div class="d-flex justify-content-between">
                                 <b style="color: #F1574F;">
