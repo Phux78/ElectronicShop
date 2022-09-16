@@ -162,7 +162,7 @@ $form = ActiveForm::begin(); ?>
                     foreach ($newProducts as $index => $item) { ?>
                         <div class="single_product_item">
                             <div style="height: 220px;">
-                                <img src="<?= $item->productImage[1] ?>" alt="">
+                                <img src="<?= $item->productImage[1] ?>" style="background-color: transparent !important" alt="">
                             </div>
                             <div class="single_product_text mt-5" style="height: 220px;">
                                 <h4><?= $item->productName ?></h4>
