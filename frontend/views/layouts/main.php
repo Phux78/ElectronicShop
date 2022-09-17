@@ -67,12 +67,12 @@ AppAsset::register($this);
                             สินค้าทุกชิ้นมีการรับประกัน, ซื้อวันนี้แถมฟรีคู่มือการใช้งาน
                         </div>
                         <div>
-                            <?php 
-                                if(!Yii::$app->user->isGuest) {
-                                    echo "Hello ".Yii::$app->user->identity->username;
-                                } else {
-                                    echo "กรุณาเข้าสู่ระบบก่อนซื้อสินค้า";
-                                }
+                            <?php
+                            if (!Yii::$app->user->isGuest) {
+                                echo "Hello " . Yii::$app->user->identity->username;
+                            } else {
+                                echo "กรุณาเข้าสู่ระบบก่อนซื้อสินค้า";
+                            }
                             ?>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ AppAsset::register($this);
         <?= $content ?>
     </main>
     <!--::footer_part start::-->
-    <footer class="footer_part">
+    <footer class="footer_part" style="background-color: #F8F9FA;">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-sm-6 col-lg-2">
