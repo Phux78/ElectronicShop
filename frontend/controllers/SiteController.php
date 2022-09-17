@@ -266,4 +266,9 @@ class SiteController extends Controller
     public function actionShopByBrand($brand_id) {
         return $this->render("shop-by-brand", ["brand_id" => $brand_id]);
     }
+
+    // shop by type
+    public function actionShopByType($type_id) {
+        return $this->render("shop-by-type", ["type_id" => $type_id]);
+    }
 }
