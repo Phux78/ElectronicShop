@@ -60,12 +60,13 @@ $brandName;
 <!-- product_list part end-->
 
 <!-- product_list part start-->
-<section class="product_list best_seller section_padding" style="background-color: #F8F9FA;">
+<section class="product_list best_seller section_padding">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="section_tittle text-center">
                     <h2>Shop by brands</h2>
+                    <h5 class="text-secondary h5">เลือกชมสินค้าตามแบรนด์นั้นๆ</h5>
                 </div>
             </div>
         </div>
