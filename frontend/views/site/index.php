@@ -72,20 +72,24 @@ $brandName;
             $model = Products::find()->where(['type_id' => $item->type_id])->one();
             // Traps errors if the product can't be found.
             // if not found, skip it
-            if(empty($model)) {
+            if (empty($model)) {
                 continue;
             }
         ?>
             <div class="col-md-3 col-6 card-hover" style="margin-bottom: 4em;">
                 <!-- card item -->
-                <div class="single_product_model">
-                    <div style="height: 220px;">
-                        <img src="<?= $model->productImage[0] ?>" alt="">
+                <a href="index.php?r=site/shop-by-type&type_id=<?= $item->type_id ?>">
+                    <div class="single_product_model">
+                        <div style="height: 220px;">
+                            <img src="<?= $model->productImage[0] ?>" alt="">
+                        </div>
+                        <div class="single_product_text mt-5 text-center">
+                            <a href="index.php?r=site/shop-by-type&type_id=<?= $item->type_id ?>" class="pt-2" id="shopbybrand">
+                                <h3><?= $item->typeName ?></h3>
+                            </a>
+                        </div>
                     </div>
-                    <div class="single_product_text mt-5 text-center">
-                        <h3><?= $item->typeName ?></h3>
-                    </div>
-                </div>
+                </a>
                 <!-- end of card item -->
             </div>
         <?php } ?>
@@ -114,9 +118,6 @@ $brandName;
                                     <img src="<?= $item->brandImage ?>" alt="">
                                 </div>
                                 <div class="single_product_text">
-                                    <!--
-                                        http://localhost/ElectronicShop/frontend/web/index.php?r=site/shop-by-brand&brand_id=b002 
-                                    -->
                                     <a href="index.php?r=site/shop-by-brand&brand_id=<?= $item->brand_id ?>" class="pt-2" id="shopbybrand">
                                         <h4><?= $item->brandName ?></h4>
                                     </a>
