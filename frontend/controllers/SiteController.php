@@ -256,4 +256,14 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+    // all product
+    public function actionAllProduct() {
+        return $this->render("all-product");
+    }
+
+    // shop by brand
+    public function actionShopByBrand($brand_id) {
+        return $this->render("shop-by-brand", ["brand_id" => $brand_id]);
+    }
 }
