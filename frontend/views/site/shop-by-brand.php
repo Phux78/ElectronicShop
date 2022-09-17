@@ -13,6 +13,9 @@ $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
             <h1 class=" h1 mt-2"><?= $brandName ?></h1>
+            มีสินค้าทั้งหมด <?= count($product) ?> ชิ้น
+            <br>
+            <br>
             <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'h5']) ?>
         </div>
         <div class="row mb-6">
