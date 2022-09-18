@@ -17,6 +17,7 @@ use yii\widgets\DetailView;
 <div class="container">
     
     <?php foreach ($user as $model) : 
+    // var_dump($model);
         $personal = PersonalInfo::find()->where(["user_id"=> (String)Yii::$app->user->identity->id])->one();
         if(empty($personal)) {
            echo Html::a('Create Personal Info', ['create'], ['class' => 'btn btn-success']); 
