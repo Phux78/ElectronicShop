@@ -34,6 +34,11 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [                
+                        'actions' => ['view', 'update','delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
             'verbs' => [
@@ -71,10 +76,6 @@ class SiteController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-        // $user = User::find()->where(["_id"=>(String)Yii::$app->user->identity->id])->all();
-        // return $this->render('index', [
-        //     'user' => $user,
-        // ]);
     }
 
     /**
@@ -84,7 +85,8 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+        
+        if ((!Yii::$app->user->isGuest)&& ($user->role == 'admin')) {
             return $this->goHome();
         }
 
@@ -112,5 +114,34 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionView($_id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($_id),
+        ]);
+    }
+
+    public function actionUpdate($_id)
+    {
+        $model = $this->findModel($_id);
+
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', '_id' => (string) $model->_id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    protected function findModel($_id)
+    {
+        if (($model = User::findOne(['_id' => $_id])) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
