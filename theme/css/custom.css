@@ -29,3 +29,16 @@
     transition: none !important;
     visibility: visible !important;
 }
+
+.timer-box {
+    border: 1px solid #000;
+}
+
+.card-hover {
+    cursor: pointer;
+    border-radius: 5px;
+    padding-bottom: 15px;
+}
+.card-hover:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}

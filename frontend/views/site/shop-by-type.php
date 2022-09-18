@@ -5,22 +5,20 @@ use app\models\Products;
 use app\models\Brand;
 use app\models\Type;
 // variables
-$type = Type::find()->where(['status' => '1'])->all();
-$product = Products::find()->where(['status' => '1'])->all();
-$brandName;
-$typeName;
+$product = Products::find()->where(['status' => '1'])->where(['type_id' => $type_id])->all();
+$typeName = Type::find()->where(['type_id' => $type_id])->one()->typeName;
 ?>
 
-<section style="margin: 70px 0">
+<section style="margin: 70px 0;">
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
-            <h1>All Products</h1>
+            <h1 class=" h1 mt-2"><?= $typeName ?></h1>
             มีสินค้าทั้งหมด <?= count($product) ?> ชิ้น
             <br>
             <br>
             <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'h5']) ?>
         </div>
-        <div class="row">
+        <div class="row mb-6">
             <?php foreach ($product as $index => $model) { ?>
                 <div class="col-md-3 col-6" style="margin-bottom: 4em;">
                     <!-- card item -->
@@ -30,8 +28,7 @@ $typeName;
                         </div>
                         <div class="single_product_text mt-5" style="height: 220px;">
                             <h4><?= $model->productName ?></h4>
-                            <?php $brandName = Brand::find()->where(['brand_id' => $model->brand_id])->one()->brandName; ?>
-                            <p><?= $brandName ?></p>
+                            <p><?= $typeName ?></p>
                             <div class="d-flex justify-content-between">
                                 <b style="color: #F1574F;">
                                     $ <?= number_format($model->productPrice) ?>

@@ -18,14 +18,24 @@ $total = 0;
 $subtotal = 0;
 $amount = 0;
 ?>
-<!--  -->
-<section class="cart_area section_padding">
+<!-- link bar -->
+<div class="container">
+  <div class="alert alert-dark w-100" role="alert" style="background-color: #F8F9FA;">
+    <div class="d-flex justify-content-between">
+      <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'text-dark']) ?>
+      <?= Html::a('ไปยังหน้าชำระเงิน >', ['#'], ['class' => 'text-dark']) ?>
+    </div>
+  </div>
+</div>
+
+<!-- cart area -->
+<section class="cart_area" style="padding-bottom: 100px;">
   <div class="container">
     <h1>Cart</h1>
     <?php
-      foreach($cart as $index => $item) {
-        $amount += $item->quantity;
-      }
+    foreach ($cart as $index => $item) {
+      $amount += $item->quantity;
+    }
     ?>
     <p>คุณมีสินค้าทั้งหมด <?= $amount ?> ชั้น</p>
     <br>

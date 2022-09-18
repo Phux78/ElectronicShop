@@ -11,10 +11,16 @@ $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
 
 <section style="margin: 70px 0;">
     <div class="container">
-        <h1 class="h1 mt-2"><?= $brandName ?></h1>
-        <div class="row">
+        <div class="title" style="margin-bottom: 3em !important;">
+            <h1 class=" h1 mt-2"><?= $brandName ?></h1>
+            มีสินค้าทั้งหมด <?= count($product) ?> ชิ้น
+            <br>
+            <br>
+            <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'h5']) ?>
+        </div>
+        <div class="row mb-6">
             <?php foreach ($product as $index => $model) { ?>
-                <div class="col-md-3" style="margin-bottom: 4em;">
+                <div class="col-md-3 col-6" style="margin-bottom: 4em;">
                     <!-- card item -->
                     <div class="single_product_model">
                         <div style="height: 220px;">
