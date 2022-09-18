@@ -41,7 +41,7 @@ class PersonalInfoController extends Controller
     public function actionIndex()
     {
         if (Yii::$app->user->isGuest)
-        $this->redirect(['site/login']);
+            $this->redirect(['site/login']);
         else {
             $user = User::find()->where(["_id"=>(String)Yii::$app->user->identity->id])->all();
             // $searchModel = new CartSearch();

@@ -8,6 +8,8 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
+use common\models\User;
+use common\models\UserSearch;
 
 /**
  * Site controller
@@ -62,7 +64,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+        // $user = User::find()->where(["_id"=>(String)Yii::$app->user->identity->id])->all();
+        // return $this->render('index', [
+        //     'user' => $user,
+        // ]);
     }
 
     /**
