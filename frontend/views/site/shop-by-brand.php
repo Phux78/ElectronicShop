@@ -9,7 +9,7 @@ $product = Products::find()->where(['status' => '1'])->where(['brand_id' => $bra
 $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
 ?>
 
-<section style="margin: 70px 0;">
+<section style="margin: 0px 0;">
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
             <h1 class=" h1 mt-2"><?= $brandName ?></h1>
@@ -31,11 +31,11 @@ $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
                             <p><?= $brandName ?></p>
                             <div class="d-flex justify-content-between">
                                 <b style="color: #F1574F;">
-                                    $ <?= number_format($model->productPrice) ?>
+                                    ฿ <?= number_format($model->productPrice) ?>
                                 </b>
                                 <!-- price before discount -->
                                 <b style="color: #BDBDBD; text-decoration: line-through;">
-                                    $ <?= number_format($model->productPrice + 2000) ?>
+                                    ฿ <?= number_format($model->productPrice + 2000) ?>
                                 </b>
                             </div>
                             <p><?= strlen($model->productDescrip) > 50 ? mb_substr($model->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>

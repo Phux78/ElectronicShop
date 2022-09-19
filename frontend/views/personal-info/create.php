@@ -5,12 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\PersonalInfo */
 
-$this->title = 'Create Personal Info';
+$this->title = 'Create Profile';
 // $this->params['breadcrumbs'][] = ['label' => 'Personal Infos', 'url' => ['index']];
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
- <div class="container">
-    <div class="personal-info-create">
+ <div class="container mt-0 pt-0">
+    <!-- <div class="personal-info-create"> -->
 
         <h1><?= Html::encode($this->title) ?></h1>
 
@@ -18,5 +18,5 @@ $this->title = 'Create Personal Info';
             'model' => $model,
         ]) ?>
 
-    </div>
+    <!-- </div> -->
 </div>

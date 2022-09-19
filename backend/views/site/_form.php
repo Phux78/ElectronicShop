@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'role')->dropDownList(
         ["admin" => "Admin", "user" => "User"],
-        ['prompt' => 'Select Status']
+        ['prompt' => 'Select Role']
     ) ?>
 
     <div class="form-group">
