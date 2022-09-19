@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 use common\models\User;
+use yii\widgets\ActiveForm;
 
 
 /* @var $this yii\web\View */
@@ -21,13 +21,22 @@ use common\models\User;
 
     <?= $form->field($model, 'lname') ?>
 
-    <?= $form->field($model, 'address') ?>
+    <?= $form->field($model, 'gender')->dropDownList(
+        ["male" => "Male", "female" => "Female"],
+        ['prompt' => 'Select Gender']
+    ) ?>
+
+    <?= $form->field($model, 'address[0]')->label("House number") ?>
+
+    <?= $form->field($model, 'address[1]')->label("City") ?>
+
+    <?= $form->field($model, 'address[2]')->label("State") ?>
+
+    <?= $form->field($model, 'address[3]')->label("Postal Code") ?>
 
     <?= $form->field($model, 'picture') ?>
 
     <?= $form->field($model, 'phone') ?>
-
-    <?= $form->field($model, 'gender') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

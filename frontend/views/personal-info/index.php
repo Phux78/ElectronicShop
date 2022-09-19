@@ -19,41 +19,70 @@ use yii\widgets\DetailView;
     <?php foreach ($user as $model) : 
     // var_dump($model);
         $personal = PersonalInfo::find()->where(["user_id"=> (String)Yii::$app->user->identity->id])->one();
-        if(empty($personal)) {
-           echo Html::a('Create Personal Info', ['create'], ['class' => 'btn btn-success']); 
-        } else { ?>
-        <!-- // var_dump($personal); -->
-        <?= Html::a('Update', ['update', '_id' => (string) $personal->_id], ['class' => 'btn btn-primary']) ?>
-        <?= DetailView::widget([
-            'model' => $model,
-            'attributes' => [
-                // '_id',
-                // 'user_id',
-                'username',
-                'email',
-            ],
+        if(empty($personal)) { ?>
+             <div class="jumbotron text-center bg-transparent mt-0 pt-0">
+                <h1 class="display-4">You don't have any personal information. !</h1>
+
+                <p><?php echo Html::a('Create Profile', ['create'], ['class' => 'btn btn-success']); ?></p>
+            </div>
+        <?php } else { ?>
+            <?= Html::a('Update', ['update', '_id' => (string) $personal->_id], ['class' => 'btn btn-primary']) ?>
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    // '_id',
+                    // 'user_id',
+                    'username',
+                    'email',
+                ],
         ]) ?>
         <?= DetailView::widget([
             'model' => $personal,
             'attributes' => [
                 // '_id',
                 // 'user_id',
+                [
+                    'label' => 'picture',
+                    'attribute' => 'picture',
+                    'format' => ['image', ['width' => '25%']],
+                    'value' => function ($personal) {
+                        return ($personal->picture);
+                    }
+                ],
                 'fname',
                 'lname',
-                'address',
-                'picture',
-                'phone',
                 'gender',
+                [
+                    'attribute' => 'House number',
+                    'format' => 'raw',
+                    'value' => function ($personal) {
+                        return $personal->address[0];
+                    },
+                ],
+                [
+                    'attribute' => 'City',
+                    'format' => 'raw',
+                    'value' => function ($personal) {
+                        return $personal->address[1];
+                    },
+                ],
+                [
+                    'attribute' => 'State',
+                    'format' => 'raw',
+                    'value' => function ($personal) {
+                        return $personal->address[2];
+                    },
+                ],
+                [
+                    'attribute' => 'State',
+                    'format' => 'raw',
+                    'value' => function ($personal) {
+                        return $personal->address[3];
+                    },
+                ],
+                'phone',
             ],
         ]) ?>
-        <!-- <div><?=$model->username ?></div>
-        <div><?=$model->email ?></div>
-        <div><?=$personal->fname ?></div>
-        <div><?=$personal->lname ?></div>
-        <div><?=$personal->address ?></div>
-        <div><?=$personal->picture ?></div>
-        <div><?=$personal->phone ?></div>
-        <div><?=$personal->gender ?></div>-->
         <?php }?>
     <?php endforeach; ?>
 </div>
