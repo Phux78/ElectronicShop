@@ -14,11 +14,9 @@ use yii\bootstrap4\ActiveForm;
 <div class="container" >
     <div class="site-signup ">
         <h1><?= Html::encode($this->title) ?></h1>
-        <div class="offset-lg-3 col-lg-6">
         <p>Please fill out the following fields to signup:</p>
-        </div>
         <div class="row">
-            <div class="mt-5 offset-lg-3 col-lg-6">
+            <div class="col-lg-12">
                 <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
