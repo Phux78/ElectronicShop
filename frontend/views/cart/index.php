@@ -18,8 +18,9 @@ $total = 0;
 $subtotal = 0;
 $amount = 0;
 ?>
+<section style="margin: 0px 0;">
 <!-- link bar -->
-<div class="container">
+<div class="container" >
   <div class="alert alert-dark w-100" role="alert" style="background-color: #F8F9FA;">
     <div class="d-flex justify-content-between">
       <?= Html::a('< กลับไปหน้าหลัก', ['/site/index'], ['class' => 'text-dark']) ?>
@@ -127,4 +128,5 @@ $amount = 0;
         </div>
       </div>
     </div>
+</section>
 </section>
