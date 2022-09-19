@@ -16,7 +16,7 @@ $brandName;
 
 <!-- product_list part start-->
 <!-- New Products -->
-<section class="product_list best_seller" style="margin: 70px 0;">
+<section class="product_list best_seller" style="margin: 0px 0;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">

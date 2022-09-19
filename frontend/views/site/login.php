@@ -10,6 +10,7 @@ use yii\bootstrap4\ActiveForm;
 // $this->title = 'Login';
 // $this->params['breadcrumbs'][] = $this->title;
 ?>
+<section style="margin: 0px 0;">
 <div class="container">
     <div class="site-login" style="max-width: 560px; margin: 0 auto;">
         <h1><?= Html::encode($this->title) ?></h1>

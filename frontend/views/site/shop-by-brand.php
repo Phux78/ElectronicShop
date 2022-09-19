@@ -9,7 +9,7 @@ $product = Products::find()->where(['status' => '1'])->where(['brand_id' => $bra
 $brandName = Brand::find()->where(['brand_id' => $brand_id])->one()->brandName;
 ?>
 
-<section style="margin: 70px 0;">
+<section style="margin: 0px 0;">
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
             <h1 class=" h1 mt-2"><?= $brandName ?></h1>

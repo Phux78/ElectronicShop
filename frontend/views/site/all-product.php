@@ -11,7 +11,7 @@ $brandName;
 $typeName;
 ?>
 
-<section style="margin: 70px 0">
+<section style="margin: 0px 0">
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
             <h1>All Products</h1>

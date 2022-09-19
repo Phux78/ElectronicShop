@@ -24,7 +24,7 @@ $this->title = 'AdminPanel';
 
             // '_id',
             'username',
-            'password_hash',
+            // 'password_hash',
             'email',
             'role',
             [

@@ -9,7 +9,7 @@ $product = Products::find()->where(['status' => '1'])->where(['type_id' => $type
 $typeName = Type::find()->where(['type_id' => $type_id])->one()->typeName;
 ?>
 
-<section style="margin: 70px 0;">
+<section style="margin: 0px 0;">
     <div class="container">
         <div class="title" style="margin-bottom: 3em !important;">
             <h1 class=" h1 mt-2"><?= $typeName ?></h1>
