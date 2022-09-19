@@ -26,7 +26,7 @@ use yii\widgets\DetailView;
                 <p><?php echo Html::a('Create Profile', ['create'], ['class' => 'btn btn-success']); ?></p>
             </div>
         <?php } else { ?>
-            <?= Html::a('Update', ['update', '_id' => (string) $personal->_id], ['class' => 'btn btn-primary mb-3']) ?>
+            <?= Html::a('Update', ['update', '_id' => (string) $personal->_id], ['class' => 'btn btn-primary mb-3 float-right btn-sm']) ?>
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
@@ -49,8 +49,14 @@ use yii\widgets\DetailView;
                         return ($personal->picture);
                     }
                 ],
-                'fname',
-                'lname',
+                [
+                    'label' => 'First Name',
+                    'value' => $personal->fname
+                ],
+                [
+                    'label' => 'Last Name',
+                    'value' => $personal->lname
+                ],
                 'gender',
                 [
                     'attribute' => 'House number',
