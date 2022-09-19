@@ -58,7 +58,7 @@ AppAsset::register($this);
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
 
-    <header>
+    <header style="border-bottom: 2px solid #0000005c;">
         <div class="tiny-header">
             <div class="container">
                 <div class="container">
