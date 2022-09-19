@@ -81,7 +81,7 @@ $amount = 0;
                   </div>
                 </td>
                 <td>
-                  <h5>$<?= number_format($total) ?></h5>
+                  <h5>฿ <?= number_format($total) ?></h5>
                 </td>
                 <td>
                   <?= Html::a('Remove', ['delete', '_id' => (string) $model->_id], [
@@ -116,7 +116,7 @@ $amount = 0;
                 <h5>Subtotal</h5>
               </td>
               <td>
-                <h5>$ <?= number_format($subtotal) ?></h5>
+                <h5>฿ <?= number_format($subtotal) ?></h5>
               </td>
             </tr>
           </tbody>

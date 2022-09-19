@@ -73,14 +73,14 @@ $form = ActiveForm::begin(); ?>
                 <div class="s_product_text">
                     <h3><?= $model->productName ?></h3>
                     <label style="text-decoration: line-through; color: #02B29A;">
-                        ราคาปกติ $ <?= number_format($model->productPrice + 2000) ?>
+                        ราคาปกติ ฿ <?= number_format($model->productPrice + 2000) ?>
                     </label>
                     <h2>
                         <div class="d-flex">
                             <span class="badge bg-secondary mr-4 text-light bg-danger">
                                 - 20%
                             </span>
-                            $ <?= number_format($model->productPrice) ?>
+                            ฿ <?= number_format($model->productPrice) ?>
                         </div>
                     </h2>
                     <ul class="list">
@@ -157,11 +157,11 @@ $form = ActiveForm::begin(); ?>
                                 <p><?= $brandName ?></p>
                                 <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">
-                                        $ <?= number_format($item->productPrice) ?>
+                                        ฿ <?= number_format($item->productPrice) ?>
                                     </b>
                                     <!-- price before discount -->
                                     <b style="color: #BDBDBD; text-decoration: line-through;">
-                                        $ <?= number_format($item->productPrice + 2000) ?>
+                                        ฿ <?= number_format($item->productPrice + 2000) ?>
                                     </b>
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>

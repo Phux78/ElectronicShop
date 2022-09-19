@@ -34,11 +34,11 @@ $typeName;
                             <p><?= $brandName ?></p>
                             <div class="d-flex justify-content-between">
                                 <b style="color: #F1574F;">
-                                    $ <?= number_format($model->productPrice) ?>
+                                    ฿ <?= number_format($model->productPrice) ?>
                                 </b>
                                 <!-- price before discount -->
                                 <b style="color: #BDBDBD; text-decoration: line-through;">
-                                    $ <?= number_format($model->productPrice + 2000) ?>
+                                    ฿ <?= number_format($model->productPrice + 2000) ?>
                                 </b>
                             </div>
                             <p><?= strlen($model->productDescrip) > 50 ? mb_substr($model->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>
