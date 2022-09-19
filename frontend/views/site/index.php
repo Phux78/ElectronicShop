@@ -36,17 +36,17 @@ $brandName;
                             <div style="height: 220px;">
                                 <img src="<?= $item->productImage[1] ?>" alt="">
                             </div>
-                            <div class="single_product_text mt-5" style="height: 220px;">
+                            <div class="single_product_text mt-5" style="height: 270px;">
                                 <h4><?= $item->productName ?></h4>
                                 <?php $brandName = Brand::find()->where(['brand_id' => $item->brand_id])->one()->brandName; ?>
                                 <p><?= $brandName ?></p>
                                 <div class="d-flex justify-content-between">
                                     <b style="color: #F1574F;">
-                                        $ <?= number_format($item->productPrice) ?>
+                                        ฿ <?= number_format($item->productPrice) ?>
                                     </b>
                                     <!-- price before discount -->
                                     <b style="color: #BDBDBD; text-decoration: line-through;">
-                                        $ <?= number_format($item->productPrice + 2000) ?>
+                                        ฿ <?= number_format($item->productPrice + 2000) ?>
                                     </b>
                                 </div>
                                 <p><?= strlen($item->productDescrip) > 50 ? mb_substr($item->productDescrip, 0, 50, 'UTF-8') . "..." : " " ?></p>

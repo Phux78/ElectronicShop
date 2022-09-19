@@ -58,7 +58,7 @@ AppAsset::register($this);
 <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
 
-    <header>
+    <header style="border-bottom: 2px solid #0000005c;">
         <div class="tiny-header">
             <div class="container">
                 <div class="container">
@@ -136,7 +136,7 @@ AppAsset::register($this);
         <?= $content ?>
     </main>
     <!--::footer_part start::-->
-    <footer class="footer_part" style="background-color: #F8F9FA;">
+    <footer class="footer_part" style="background-color: #F8F9FA; border-top: 2px solid #0000005c;">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-sm-6 col-lg-2">
