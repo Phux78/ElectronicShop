@@ -94,7 +94,7 @@ class User extends \yii\mongodb\ActiveRecord implements IdentityInterface
 
         return static::findOne($id);
     }
-
+    
     /**
      * {@inheritdoc}
      */

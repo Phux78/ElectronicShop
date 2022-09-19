@@ -30,9 +30,13 @@ $this->title = 'AdminPanel';
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, $model, $key, $index, $column) {
+                    // var_dump($model->role);
                     return Url::toRoute([$action, '_id' => (string) $model->_id]);
+                    
                  }
             ],
         ],
     ]); ?>
+
+    
 </div>

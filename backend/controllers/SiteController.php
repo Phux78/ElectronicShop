@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use common\models\LoginForm;
+use backend\models\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -31,6 +31,11 @@ class SiteController extends Controller
                     ],
                     [
                         'actions' => ['logout', 'index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    [                
+                        'actions' => ['view', 'update','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -71,10 +76,6 @@ class SiteController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-        // $user = User::find()->where(["_id"=>(String)Yii::$app->user->identity->id])->all();
-        // return $this->render('index', [
-        //     'user' => $user,
-        // ]);
     }
 
     /**
@@ -84,21 +85,22 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $this->layout = 'blank';
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        $loginModel = new LoginForm();
+        if ($loginModel->load(Yii::$app->request->post()) && $loginModel->login()) {
             return $this->goBack();
         }
 
-        $model->password = '';
+        $loginModel->password = '';
 
         return $this->render('login', [
-            'model' => $model,
+            'model' => $loginModel,
         ]);
     }
 
@@ -112,5 +114,34 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionView($_id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($_id),
+        ]);
+    }
+
+    public function actionUpdate($_id)
+    {
+        $model = $this->findModel($_id);
+
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', '_id' => (string) $model->_id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    protected function findModel($_id)
+    {
+        if (($model = User::findOne(['_id' => $_id])) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
