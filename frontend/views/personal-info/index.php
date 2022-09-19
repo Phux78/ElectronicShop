@@ -90,11 +90,20 @@ use yii\widgets\DetailView;
         // var_dump($model);
         $personal = PersonalInfo::find()->where(["user_id" => (string)Yii::$app->user->identity->id])->one();
         if (empty($personal)) { ?>
-            <div class="jumbotron text-center bg-transparent mt-0 pt-0">
-                <h1 class="display-4">You don't have any personal information. !</h1>
+            <!-- start -->
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://www.clipartmax.com/png/full/136-1367245_people-shrug-clipart.png" style="width: 180px;">
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                    <div class="jumbotron text-left bg-transparent mt-0 pt-0">
+                        <h1 class="display-4">You don't have any personal information. !</h1>
 
-                <p><?php echo Html::a('Create Profile', ['create'], ['class' => 'btn btn-success']); ?></p>
+                        <p><?php echo Html::a('Create Profile', ['create'], ['class' => 'btn btn-success btn-block']); ?></p>
+                    </div>
+                </div>
             </div>
+            <!-- end -->
         <?php } else { ?>
             <!-- template content -->
 
@@ -189,9 +198,9 @@ use yii\widgets\DetailView;
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="form-group">
                                         <p>Profile picture</p>
-                                        <?php 
-                                        if(strlen($personal->picture) > 150)
-                                            echo mb_substr($personal->picture, 0, 150, 'UTF-8')."......";
+                                        <?php
+                                        if (strlen($personal->picture) > 150)
+                                            echo mb_substr($personal->picture, 0, 150, 'UTF-8') . "......";
                                         else
                                             echo $personal->picture;
                                         ?>
