@@ -78,6 +78,7 @@ use yii\widgets\DetailView;
         .form-group {
             border-top: 1px solid #2e323c45;
         }
+
         .form-group p {
             font-weight: 600;
         }
@@ -107,6 +108,8 @@ use yii\widgets\DetailView;
                                         <?php
                                         if (!empty($personal->picture)) { ?>
                                             <?= Html::img($personal->picture, ['class' => 'responsive', 'style' => 'width: 100%;']); ?>
+                                        <?php } else { ?>
+                                            <h3>You don't have a profile picture.</h3>
                                         <?php } ?>
                                     </div>
                                     <h5 class="user-name">
@@ -186,7 +189,12 @@ use yii\widgets\DetailView;
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="form-group">
                                         <p>Profile picture</p>
-                                        <?= $personal->picture ?>
+                                        <?php 
+                                        if(strlen($personal->picture) > 150)
+                                            echo mb_substr($personal->picture, 0, 150, 'UTF-8')."......";
+                                        else
+                                            echo $personal->picture;
+                                        ?>
                                     </div>
                                 </div>
                             </div>

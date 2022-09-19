@@ -88,9 +88,11 @@ use yii\widgets\ActiveForm;
                                     <?php
                                     if (!empty($model->picture)) { ?>
                                         <?= Html::img($model->picture, ['class' => 'responsive', 'style' => 'width: 100%;']); ?>
+                                        <h5 class="text-muted">User profile</h5>
+                                    <?php } else { ?>
+                                        <h3>You don't have a profile picture.</h3>
                                     <?php } ?>
                                 </div>
-                                <h5 class="text-muted">User profile</h5>
                             </div>
                         </div>
                     </div>
@@ -178,16 +180,3 @@ use yii\widgets\ActiveForm;
     <!-- end template -->
     <?php ActiveForm::end(); ?>
 </div>
-
-<!-- unused code
-    <?= $form->field($model, 'gender')->dropDownList(
-        ["male" => "Male", "female" => "Female"],
-        ['prompt' => 'Select Gender']
-    ) ?>
-
-    <?= $form->field($model, 'gender')->radioList([
-        'male' => 'Male',
-        'female' => 'Female',
-        'other'
-    ]); ?>
--->
