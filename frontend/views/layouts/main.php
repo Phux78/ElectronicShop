@@ -53,7 +53,7 @@ AppAsset::register($this);
             font-family: 'Prompt', sans-serif !important;
         }
     </style>
-    <!-- icon --> 
+    <!-- icon change favicon here --> 
     <?php
         $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => 'https://cdn-icons-png.flaticon.com/512/2985/2985698.png']);
     ?>
