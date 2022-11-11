@@ -107,6 +107,7 @@ AppAsset::register($this);
         } else {
             $menuItems[] = ['label' => 'Profile', 'url' => ['personal-info/index']];
             $menuItems[] = ['label' => 'Cart', 'url' => ['/cart/index']];
+            $menuItems[] = ['label' => 'Tracking', 'url' => ['/tracking/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
